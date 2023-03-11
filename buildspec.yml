@@ -1,9 +1,16 @@
 version: 0.2
 
+env:
+  variables:
+    AWS_ACCOUNT_ID: "680308554933"
+    IMAGE_REPO_NAME: "code-build-ecr"
+    IMAGE_TAG: "latest"
+
 phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
+      - echo region is $AWS_DEFAULT_REGION account id is $AWS_ACCOUNT_ID
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
   build:
     commands:
