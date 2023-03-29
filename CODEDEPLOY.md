@@ -18,5 +18,5 @@ aws s3api put-bucket-versioning --bucket aws-devops-course-stephane --versioning
 
 # deploy the files into S3
 ```
-aws deploy push --application-name CodeDeployDemo --s3-location s3://aws-devops-course-stephane/codedeploy-demo/app.zip --ignore-hidden-files --region eu-west-1 --profile aws-devops
+aws deploy push --application-name CodeDeployDemo --s3-location s3://aws-devops-emon-course/codedeploy-demo/app.zip --ignore-hidden-files --region eu-west-1 --profile aws-devops
 ```
